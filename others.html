@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Others — GLOBE Management</title>
+  <link rel="icon" type="image/png" href="assets/icon-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Others-specific overrides ── */
+    .partner-hero {
+      padding: calc(var(--nav-h) + 5rem) 0 5rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .partner-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+      pointer-events: none;
+    }
+
+    /* Logo lockup */
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+      position: relative; z-index: 1;
+    }
+    .lockup-logo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .lockup-globe { filter: none !important; }
+    .lockup-qampus { opacity: 0.9; }
+    .lockup-div {
+      width: 1px;
+      height: 32px;
+      background: var(--border-mid);
+    }
+    .lockup-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .partner-title {
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 11vw, 10rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .partner-sub {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.75;
+      position: relative; z-index: 1;
+    }
+    .partner-sub a {
+      color: var(--silver);
+      border-bottom: 1px solid var(--border-mid);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .partner-sub a:hover { color: var(--white); border-color: var(--white); }
+
+    /* Qampus links bar */
+    .qampus-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+    .qlink {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silver-dim);
+      border: 1px solid var(--border-mid);
+      padding: 0.55rem 1.1rem;
+      border-radius: 1px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .qlink:hover { color: var(--white); border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.03); }
+    .qlink-icon { font-size: 0.9rem; line-height: 1; }
+
+    /* Services grid */
+    .services-wrap { padding: 7rem 0; }
+
+    .services-intro {
+      margin-bottom: 4rem;
+    }
+    .services-intro p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.8;
+      margin-top: 1rem;
+    }
+
+    .qampus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 1px;
+    }
+
+    .q-card {
+      background: var(--black);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s;
+    }
+    .q-card:hover { background: var(--surface); }
+    .q-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--white);
+      transition: width 0.5s var(--ease);
+    }
+    .q-card:hover::before { width: 100%; }
+
+    .q-card-index {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      color: var(--text-muted);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+    .q-card:hover .q-card-index { color: var(--silver-dim); }
+
+    .q-card-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .q-card-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+    .q-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .q-card-list li {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding-left: 0.8rem;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .q-card:hover .q-card-list li { color: var(--silver-dim); }
+    .q-card-list li::before { content: '→'; position: absolute; left: 0; font-size: 0.6rem; }
+
+    /* Wide card (full width) */
+    .q-card-wide {
+      background: var(--black);
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s;
+    }
+    .q-card-wide:hover { background: var(--surface); }
+    .q-card-wide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--white);
+      transition: width 0.5s var(--ease);
+    }
+    .q-card-wide:hover::before { width: 100%; }
+
+    .q-wide-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--silver-dim);
+      margin-bottom: 0.5rem;
+    }
+    .q-wide-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .q-wide-text a {
+      color: var(--silver);
+      border-bottom: 1px solid var(--border-mid);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .q-wide-text a:hover { color: var(--white); border-color: var(--white); }
+
+    /* CTA */
+    .others-cta {
+      padding: 7rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .cta-block { max-width: 640px; }
+    .cta-block-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 5vw, 4.5rem);
+      letter-spacing: 0.02em;
+      line-height: 1.02;
+      margin-bottom: 1.25rem;
+    }
+    .cta-block-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .qampus-grid { grid-template-columns: 1fr 1fr; }
+      .q-card-wide { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .qampus-grid { grid-template-columns: 1fr; }
+      .lockup { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/icon-white.png" alt="GLOBE Management" class="nav-logo-icon" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#artists">Artists</a></li>
+        <li><a href="others.html" class="active">Others</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="partner-hero">
+    <div class="container">
+
+      <!-- GLOBE × QAMPUS lockup -->
+      <div class="lockup" data-reveal>
+        <img src="assets/icon-white.png" alt="GLOBE" class="lockup-logo lockup-globe nav-logo-icon" style="height:44px;width:44px;" />
+        <div class="lockup-div"></div>
+        <img src="assets/qampus-white.png" alt="Qampus" class="lockup-logo lockup-qampus" style="height:44px;width:44px;" />
+        <div class="lockup-div"></div>
+        <span class="lockup-tag">A GLOBE × Qampus Partnership</span>
+      </div>
+
+      <h1 class="partner-title" data-reveal>Others</h1>
+
+      <p class="partner-sub" data-reveal>
+        Beyond artist management, GLOBE operates a full cultural infrastructure in partnership with
+        <a href="https://www.qampusapp.com" target="_blank" rel="noopener">Qampus</a> —
+        Turkey's leading student network platform. Every vertical below is built, activated, and scaled together.
+      </p>
+
+      <!-- Qampus links -->
+      <div class="qampus-links" data-reveal>
+        <a href="https://www.qampusapp.com" target="_blank" rel="noopener" class="qlink">
+          <span class="qlink-icon">🌐</span> qampusapp.com
+        </a>
+        <a href="https://instagram.com/qampustr" target="_blank" rel="noopener" class="qlink">
+          <span class="qlink-icon">📷</span> @qampustr
+        </a>
+        <a href="https://instagram.com/staywithqampus" target="_blank" rel="noopener" class="qlink">
+          <span class="qlink-icon">📷</span> @staywithqampus
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>Organization</span><span class="sep">×</span>
+        <span>Influencer Marketing</span><span class="sep">×</span>
+        <span>Campus Events</span><span class="sep">×</span>
+        <span>Brand Activations</span><span class="sep">×</span>
+        <span>Student Network</span><span class="sep">×</span>
+        <span>Creator Campaigns</span><span class="sep">×</span>
+        <span>Cultural Productions</span><span class="sep">×</span>
+        <span>Community Building</span><span class="sep">×</span>
+        <span>Organization</span><span class="sep">×</span>
+        <span>Influencer Marketing</span><span class="sep">×</span>
+        <span>Campus Events</span><span class="sep">×</span>
+        <span>Brand Activations</span><span class="sep">×</span>
+        <span>Student Network</span><span class="sep">×</span>
+        <span>Creator Campaigns</span><span class="sep">×</span>
+        <span>Cultural Productions</span><span class="sep">×</span>
+        <span>Community Building</span><span class="sep">×</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-wrap">
+    <div class="container">
+
+      <div class="services-intro" data-reveal>
+        <span class="section-label">Built with Qampus</span>
+        <h2 class="section-title">What we do together</h2>
+        <p>Every initiative below is a joint operation between GLOBE and Qampus. The network, the audience, the execution — shared infrastructure, built to move at scale.</p>
+      </div>
+
+      <!-- 3-column grid -->
+      <div class="qampus-grid">
+
+        <div class="q-card" data-reveal>
+          <div class="q-card-index">01</div>
+          <h3 class="q-card-title">Organization</h3>
+          <p class="q-card-desc">Events and cultural productions designed and executed at scale — from nightlife experiences to campus-centered brand activations, all powered by the Qampus network.</p>
+          <ul class="q-card-list">
+            <li>Events & Nightlife</li>
+            <li>Brand Activations</li>
+            <li>Cultural Productions</li>
+            <li>Campus Events</li>
+          </ul>
+        </div>
+
+        <div class="q-card" data-reveal data-delay="1">
+          <div class="q-card-index">02</div>
+          <h3 class="q-card-title">Influencer Marketing</h3>
+          <p class="q-card-desc">Strategic creator campaigns built on the Qampus influencer ecosystem. Brands connect with authentic campus voices that drive real cultural movement.</p>
+          <ul class="q-card-list">
+            <li>Campaign Strategy</li>
+            <li>Creator Collaborations</li>
+            <li>Cross-Platform Reach</li>
+            <li>Student Ambassador Programs</li>
+          </ul>
+        </div>
+
+        <div class="q-card" data-reveal data-delay="2">
+          <div class="q-card-index">03</div>
+          <h3 class="q-card-title">Qampus Platform</h3>
+          <p class="q-card-desc">Turkey's leading student network — connecting campus communities with brands, events, and opportunities. The platform that powers every activation we run together.</p>
+          <ul class="q-card-list">
+            <li>Student Network</li>
+            <li>Community Building</li>
+            <li>Brand Integration</li>
+            <li>Campus Activations</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Wide info card -->
+      <div class="q-card-wide" data-reveal>
+        <div>
+          <div class="q-wide-label">Platform</div>
+          <p class="q-wide-text">
+            Qampus is live and active across Turkish university campuses.<br />
+            <a href="https://www.qampusapp.com" target="_blank" rel="noopener">www.qampusapp.com</a>
+          </p>
+        </div>
+        <div>
+          <div class="q-wide-label">Follow</div>
+          <p class="q-wide-text">
+            <a href="https://instagram.com/qampustr" target="_blank" rel="noopener">@qampustr</a> — Main platform account<br />
+            <a href="https://instagram.com/staywithqampus" target="_blank" rel="noopener">@staywithqampus</a> — Events & activations
+          </p>
+        </div>
+        <div>
+          <div class="q-wide-label">Work with us</div>
+          <p class="q-wide-text">
+            Whether you're a brand, an organizer, or a creator — reach us at
+            <a href="mailto:info@globehouse.co">info@globehouse.co</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="others-cta">
+    <div class="container">
+      <div class="cta-block" data-reveal>
+        <span class="section-label">The System</span>
+        <h2 class="cta-block-title">One infrastructure.<br />Multiple surfaces.</h2>
+        <p class="cta-block-sub">GLOBE handles the artist side. Qampus handles the audience side. Together, we create access points that a single-discipline company can never replicate — across clubs, campuses, brands, and borders.</p>
+        <a href="index.html#contact" class="btn btn-primary magnetic">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/icon-white.png" alt="GLOBE Management" class="footer-logo-icon" />
+        </a>
+        <nav class="footer-nav">
+          <a href="index.html#artists">Artists</a>
+          <a href="others.html">Others</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 GLOBE Management. All rights reserved.</span>
+        <span class="footer-tag">Artists, built with a system.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

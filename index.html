@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLOBE Management</title>
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/icon-white.png" alt="GLOBE Management" class="nav-logo-icon" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="others.html">Others</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <div class="hero-grid-lines"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-label" data-hero-label>
+        <span class="label-dot"></span>
+        Global Artist Management
+      </div>
+      <h1 class="hero-headline">
+        <span class="hero-word" data-hero-word>Artists,</span>
+        <span class="hero-word" data-hero-word>built with</span>
+        <span class="hero-word" data-hero-word>a system.</span>
+      </h1>
+      <p class="hero-sub" data-hero-sub>We don't manage careers. We engineer them — through identity, infrastructure, and international positioning that compounds across borders.</p>
+      <div class="hero-actions" data-hero-actions>
+        <a href="#artists" class="btn btn-primary magnetic">View Artists</a>
+        <a href="#contact" class="btn btn-ghost magnetic">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll" data-hero-scroll>
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-coords" data-hero-coords>
+      <span>41.0082° N, 28.9784° E</span>
+      <span class="coords-sep">/</span>
+      <span>52.5200° N, 13.4050° E</span>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <div class="ticker-track" id="tickerTrack">
+        <span>Istanbul</span><span class="sep">×</span>
+        <span>Berlin</span><span class="sep">×</span>
+        <span>Amsterdam</span><span class="sep">×</span>
+        <span>London</span><span class="sep">×</span>
+        <span>Dubai</span><span class="sep">×</span>
+        <span>Barcelona</span><span class="sep">×</span>
+        <span>Miami</span><span class="sep">×</span>
+        <span>Tokyo</span><span class="sep">×</span>
+        <span>New York</span><span class="sep">×</span>
+        <span>Paris</span><span class="sep">×</span>
+        <span>São Paulo</span><span class="sep">×</span>
+        <span>Singapore</span><span class="sep">×</span>
+        <!-- duplicate for seamless loop -->
+        <span>Istanbul</span><span class="sep">×</span>
+        <span>Berlin</span><span class="sep">×</span>
+        <span>Amsterdam</span><span class="sep">×</span>
+        <span>London</span><span class="sep">×</span>
+        <span>Dubai</span><span class="sep">×</span>
+        <span>Barcelona</span><span class="sep">×</span>
+        <span>Miami</span><span class="sep">×</span>
+        <span>Tokyo</span><span class="sep">×</span>
+        <span>New York</span><span class="sep">×</span>
+        <span>Paris</span><span class="sep">×</span>
+        <span>São Paulo</span><span class="sep">×</span>
+        <span>Singapore</span><span class="sep">×</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-reveal>
+          <div class="stat-number" data-count="500" data-suffix="+">0+</div>
+          <div class="stat-label">Venue Connections</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-number" data-count="30" data-suffix="+">0+</div>
+          <div class="stat-label">Brand Partnerships</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-number" data-count="50" data-suffix="+">0+</div>
+          <div class="stat-label">Organizer Network</div>
+        </div>
+        <div class="stat-item" data-reveal>
+          <div class="stat-number" data-count="4" data-suffix="">0</div>
+          <div class="stat-label">Core Artists</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTISTS -->
+  <section class="artists-section" id="artists">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">Roster</span>
+        <h2 class="section-title split-title">The Artists</h2>
+      </div>
+      <div class="artists-grid">
+
+        <div class="artist-card" data-reveal data-delay="0">
+          <div class="artist-image-wrap">
+            <div class="artist-image artist-placeholder">
+              <span class="placeholder-initial">TT</span>
+              <div class="placeholder-lines">
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+              </div>
+            </div>
+            <div class="artist-overlay">
+              <button class="btn-detail magnetic" onclick="openModal('tim')">View Profile</button>
+            </div>
+            <div class="artist-card-index">01</div>
+          </div>
+          <div class="artist-info">
+            <div class="artist-meta">
+              <span class="artist-role">DJ / Producer</span>
+              <div class="artist-tags">
+                <span class="tag">Melodic House</span>
+                <span class="tag">Techno</span>
+              </div>
+            </div>
+            <h3 class="artist-name">Tim Titze</h3>
+            <div class="artist-actions">
+              <a href="mailto:timtitze@globehouse.co" class="btn btn-artist-primary magnetic">Contact Tim</a>
+              <a href="mailto:info@globehouse.co" class="btn btn-artist-ghost">General Inquiry</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card" data-reveal data-delay="1">
+          <div class="artist-image-wrap">
+            <div class="artist-image artist-placeholder">
+              <span class="placeholder-initial">V</span>
+              <div class="placeholder-lines">
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+              </div>
+            </div>
+            <div class="artist-overlay">
+              <button class="btn-detail magnetic" onclick="openModal('vector')">View Profile</button>
+            </div>
+            <div class="artist-card-index">02</div>
+          </div>
+          <div class="artist-info">
+            <div class="artist-meta">
+              <span class="artist-role">DJ / Producer</span>
+              <div class="artist-tags">
+                <span class="tag">Techno</span>
+                <span class="tag">Industrial</span>
+              </div>
+            </div>
+            <h3 class="artist-name">Vector</h3>
+            <div class="artist-actions">
+              <a href="mailto:vector@globehouse.co" class="btn btn-artist-primary magnetic">Contact Vector</a>
+              <a href="mailto:info@globehouse.co" class="btn btn-artist-ghost">General Inquiry</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card" data-reveal data-delay="2">
+          <div class="artist-image-wrap">
+            <div class="artist-image artist-placeholder">
+              <span class="placeholder-initial">FB</span>
+              <div class="placeholder-lines">
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+              </div>
+            </div>
+            <div class="artist-overlay">
+              <button class="btn-detail magnetic" onclick="openModal('feyza')">View Profile</button>
+            </div>
+            <div class="artist-card-index">03</div>
+          </div>
+          <div class="artist-info">
+            <div class="artist-meta">
+              <span class="artist-role">DJ / Producer</span>
+              <div class="artist-tags">
+                <span class="tag">Afro House</span>
+                <span class="tag">Organic</span>
+              </div>
+            </div>
+            <h3 class="artist-name">Feyza Bayrakçı</h3>
+            <div class="artist-actions">
+              <a href="mailto:feyzabayrakci@globehouse.co" class="btn btn-artist-primary magnetic">Book Feyza</a>
+              <a href="mailto:info@globehouse.co" class="btn btn-artist-ghost">General Inquiry</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="artist-card" data-reveal data-delay="3">
+          <div class="artist-image-wrap">
+            <div class="artist-image artist-placeholder">
+              <span class="placeholder-initial">KA</span>
+              <div class="placeholder-lines">
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+                <div class="ph-line"></div>
+              </div>
+            </div>
+            <div class="artist-overlay">
+              <button class="btn-detail magnetic" onclick="openModal('kaan')">View Profile</button>
+            </div>
+            <div class="artist-card-index">04</div>
+          </div>
+          <div class="artist-info">
+            <div class="artist-meta">
+              <span class="artist-role">DJ / Producer</span>
+              <div class="artist-tags">
+                <span class="tag">Deep House</span>
+                <span class="tag">Progressive</span>
+              </div>
+            </div>
+            <h3 class="artist-name">Kaan Ata</h3>
+            <div class="artist-actions">
+              <a href="mailto:kaanata@globehouse.co" class="btn btn-artist-primary magnetic">Book Kaan</a>
+              <a href="mailto:info@globehouse.co" class="btn btn-artist-ghost">General Inquiry</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left" data-reveal>
+          <span class="section-label">About</span>
+          <h2 class="about-title">We don't just manage artists.<br />We build systems.</h2>
+          <p class="about-body">GLOBE is a selective artist management company built for the international market. We take on four artists — not four hundred. Every artist in our roster receives a complete career architecture: brand identity, content strategy, booking infrastructure, and long-term positioning engineered for the global stage.</p>
+          <p class="about-body">Our network spans 500+ venues across every major territory, 30 brand partners, and 50 organizer relationships. We leverage all of it — exclusively for the artists we believe in without reservation.</p>
+          <a href="#contact" class="btn btn-primary magnetic" style="margin-top: 2.5rem; display: inline-flex;">Work with us</a>
+        </div>
+        <div class="about-right">
+          <div class="about-pillars">
+            <div class="pillar" data-reveal>
+              <div class="pillar-number">01</div>
+              <div class="pillar-text">
+                <h4>System Over Hustle</h4>
+                <p>Careers built on repeatable, scalable infrastructure — not luck or one-off connections.</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal>
+              <div class="pillar-number">02</div>
+              <div class="pillar-text">
+                <h4>Identity First</h4>
+                <p>Before bookings, before content — who is this artist, and why does the international market need them?</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal>
+              <div class="pillar-number">03</div>
+              <div class="pillar-text">
+                <h4>Cross-Border by Default</h4>
+                <p>No market is out of reach. Every decision is made with a global trajectory as the baseline, not the ceiling.</p>
+              </div>
+            </div>
+            <div class="pillar" data-reveal>
+              <div class="pillar-number">04</div>
+              <div class="pillar-text">
+                <h4>Selective by Design</h4>
+                <p>Four artists. Full focus. Undivided attention and resources — no compromise, no dilution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Services</h2>
+      </div>
+      <div class="services-list">
+        <div class="service-row" data-reveal>
+          <span class="service-index">01</span>
+          <span class="service-name">Artist Management</span>
+          <span class="service-desc">Full-spectrum career management from ground zero to international stages.</span>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-row" data-reveal>
+          <span class="service-index">02</span>
+          <span class="service-name">Booking Strategy</span>
+          <span class="service-desc">Strategic placement across venues, festivals, and global events.</span>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-row" data-reveal>
+          <span class="service-index">03</span>
+          <span class="service-name">Brand Positioning</span>
+          <span class="service-desc">Identity, visuals, and narrative architected to endure a decade of global exposure.</span>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-row" data-reveal>
+          <span class="service-index">04</span>
+          <span class="service-name">Content Direction</span>
+          <span class="service-desc">Systematic content strategy built for cross-market reach, not just local virality.</span>
+          <div class="service-line"></div>
+        </div>
+        <div class="service-row" data-reveal>
+          <span class="service-index">05</span>
+          <span class="service-name">Global Network</span>
+          <span class="service-desc">500+ venues, 50 organizers, 30 brand partners — activated across every major territory.</span>
+          <div class="service-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left" data-reveal>
+          <span class="section-label">Contact</span>
+          <h2 class="contact-title">Operate<br />everywhere.</h2>
+          <p class="contact-sub">Whether you're an artist ready to scale internationally, a brand seeking authentic cultural access, or an organizer building a global lineup — start here.</p>
+          <div class="contact-info">
+            <div class="contact-info-row">
+              <span class="ci-label">Email</span>
+              <a href="mailto:info@globehouse.co" class="ci-value">info@globehouse.co</a>
+            </div>
+            <div class="contact-info-row">
+              <span class="ci-label">Phone</span>
+              <a href="tel:+905340882237" class="ci-value">0534 088 22 37</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right" data-reveal>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Name" required />
+              <div class="form-underline"></div>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email" required />
+              <div class="form-underline"></div>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Phone" />
+              <div class="form-underline"></div>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Message" rows="5" required></textarea>
+              <div class="form-underline"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/icon-white.png" alt="GLOBE Management" class="footer-logo-icon" />
+        </a>
+        <nav class="footer-nav">
+          <a href="#artists">Artists</a>
+          <a href="others.html">Others</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 GLOBE Management. All rights reserved.</span>
+        <span class="footer-tag">Artists, built with a system.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARTIST MODALS -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&#215;</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
